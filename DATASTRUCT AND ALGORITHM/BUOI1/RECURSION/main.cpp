@@ -1,6 +1,4 @@
-
 #include <iostream>
-
 
 // tính tổng các số từ 1 đến n sn = 1 + ... + n;
 
@@ -59,6 +57,7 @@ int F_1(int n)
     return cache[n];
 }
 // đệ quy có nhớ(sử dụng bộ nhớ lưu kết quả đã tính trước đó)
+
 
 
 int main()
