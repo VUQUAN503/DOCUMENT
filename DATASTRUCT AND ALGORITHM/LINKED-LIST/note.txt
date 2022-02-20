@@ -1,0 +1,56 @@
+
++ Mảng tĩnh: (int a[100]) khai báo mảng có 100 phần tử
+Luôn phải khai báo mảng với một kích thước đủ lớn mặc dù mình chỉ dùng có 5 hoặc 3, 4 phần tử
+=> Dẫn đến tốn bộ nhớ
+
++ Mảng động: (cấp phát bằng con trỏ vd: int *a = new int[5]) thì => muốn dùng bao nhiêu phần tử thì cấp phát bấy nhiêu
++> Giải quyết được vấn đề của mảng tĩnh
+
++ Tích chất: mảng là một dãy các ô nhớ nằm liên tục trong ram
+vd:  2, 1, 5, 4, 3
+    13 14 15 16 17
+
+=> Có một nhược điểm làm phân mảnh bộ nhớ
+Mình muốn cấp phát mảng một chiều có 10 phần tử
+=> trong ram phải còn ít nhất 10 ô nhớ mà các ô nhớ đó nằm liên tục nhau
+=> Nếu trong ram còn 10 ô nhớ mà 10 ô nhớ này không nằm liên tục nhau => Không cấp phát được
+
+=> Danh Sách Liên Kết ra đời để khắc phục cái nhược điểm đó
+Khái niệm: Dánh sách liên kết(Linked list): là tập hợp các node nằm rời rạc nhau trong bộ nhớ
++ Trong đó 1 node nó chứa hai thành phần + Thông tin nó cần lưu trữ(giá trị của node đó)
+					 + Con trỏ để lưu trữ địa chỉ của phần tử kế tiếp nó
+
+ƯU điểm lớn nhất của mảng chính là việc truy xuất phần tử vd: muốn lấy phần tử thứ 3 trong mảng => a[3]
+
+Ưu điểm của mảng nhược điểm của DSLK
+Ưu điểm DSLK là nhược điểm của mảng
+Ưu điểm nhược điểm
+Ưu điểm:
++ Các phần tử không cần nằm liên tục nhau trong bộ nhớ => khắc phục tình trạng phân mảnh
++ Thao tác thêm hay xoá dễ dàng chỉ cần bẻ mối liên kết của nó(không dịch các phần tử như bên mảng)
+
+Nhược điểm:
++ Truy xuất phần tử khó khăn phải duyệt qua danh sách
++ Tốn bộ nhớ hơn mảng động(vì nó cần phải lưu hai thành phân(thông tin(giá trị của node) và con trỏ để lưu trữ địa chỉ của phần tử kế tiếp))
+
+// Xây dựng danh sách liên kết
++> Muốn biểu diễn được một node thì mình có thể dùng kiểu int, float, double được không
+=> Không được => mình dùng kiểu dữ liệu do mình tự định nghĩa (struct)
+
+   ==== CÁC BƯỚC XÂY DỰNG(LÀM VIỆC) MỘT DANH SÁCH LIÊN KẾT
++ Bước 1: Khai báo kiểu dữ liệu node gồm hai thành phần {data, con trỏ next}
++ Bước 2: Tạo node(tạo phần tử trong danh sách)
++ Bước 3: Khởi tạo danh sách
++ Bước 4: viết hàm thêm node vào trong danh sách
++ Bước 5: viết hàm xoá một node trong danh sách
++ Bước 6: Viết các hàm xử lý hay thao tác với danh sách liên kết(vd: tìm kiếm phần tử, tính tổng các phần tử trong danh sách...)
++ Bước 7: delete => Giải phóng danh sách(vì dùng con trỏ)
+
+
+
+
+
+
+
+
+
