@@ -1,4 +1,10 @@
 #include <iostream>
+#include <list>
+#include <vector>
+#include <map>
+#include <stack>
+#include <queue>
+#include <set>
 
 // Bước 1: Tạo cấu trúc để biểu diễn thông tin của một node
 // một node có 2 thành phần { giá trị và con trỏ lưu trữ địa chỉ của node tiếp theo}
@@ -127,6 +133,9 @@ void remove(LinkedList &l, int data)
         // mục đích lưu lại thằng trước pt mình cần tìm
         p = p->next;
     }
+    // không tìm thấy phần tử cần xóa trong danh sách
+    if(p == NULL)
+        return;
     // sau khi kết thúc vòng lặp thí p là node có data là data mình truyền
     // node k là node trước node p
     k->next = p->next;
@@ -190,8 +199,10 @@ void input(LinkedList &l, int n)
 
 void print(LinkedList l)
 {
-    for(Node *p = l.head; p != NULL; p = p->next)
-        std::cout << p->data << " ";
+    Node *p = l.head;
+    for(; p ->next != NULL; p = p->next)
+        printf("|%-4d", p->data);
+    printf("|%-4d|\n", p->data);
 }
 
 // BƯỚC 7: GIẢI PHÓNG CÂY
@@ -207,20 +218,23 @@ void removeAll(LinkedList &l)
 
 int main()
 {
+    
 	LinkedList l;
 	init(l);
-	// tạo node
-    // addNode(l, 1);
-    // addTail(l, 2);
-    // addTail(l, 5);
-    // addTail(l, 4);
-    // addTail(l, 3);
-    // add(l, 100, 5);
-    // remove(l, 5);
-    // removeHead(l);
-    // removeTail(l);
+    addNode(l, 1);
+    addTail(l, 2);
+    addTail(l, 5);
+    addTail(l, 4);
+    addTail(l, 3);
+    add(l, 100, 5);
+    remove(l, 8);
+    removeHead(l);
+    removeTail(l);
     // 2 100 4
-    input(l, 5);
+    // input(l, 5);
+    print(l);
+    print(l);
+    removeAll(l);
     print(l);
 	// => one
 	// xem dữ liệu của phần tử đầu tiên trong danh sách
