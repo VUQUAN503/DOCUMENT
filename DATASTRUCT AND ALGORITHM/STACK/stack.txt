@@ -1,0 +1,10 @@
+STACK(Dùng để khử đệ quy) Cấu trúc dữ liệu ngăn xếp
+(LIFO - Last in first out)
+
+-- Xây dựng Stack
++ Dùng Danh sách liên kết để xây dựng
+- Kiểm tra xem stack có rỗng không
+- thêm phần tử vào trong stack(chỉ được thêm vào đầu stack)
+- Xóa một phần tử a khỏi stack(chỉ được xóa phần tử đầu)
+- 
++ Dùng Mảng một chiều xay dựng
